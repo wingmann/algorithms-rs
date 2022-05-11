@@ -1,10 +1,10 @@
 pub fn binary_search<T>(data: &[T], target: &T) -> Result<usize, usize>
     where T: PartialOrd
 {
-    let mut size = data.len();
-    if size == 0 {
+    if data.is_empty() {
         return Err(0);
     }
+    let mut size = data.len();
     let mut base = 0usize;
 
     while size > 1 {

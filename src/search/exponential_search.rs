@@ -3,10 +3,10 @@ use crate::search::binary_search;
 pub fn exponential_search<T>(data: &[T], target: &T) -> Result<usize, usize>
     where T: PartialOrd
 {
-    let size = data.len();
-    if size == 0 {
+    if data.is_empty() {
         return Err(0);
     }
+    let size = data.len();
     let mut high = 1usize;
 
     while high < size && data[high] < *target {
