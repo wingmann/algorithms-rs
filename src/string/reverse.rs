@@ -7,12 +7,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_simple() {
+    fn simple() {
         assert_eq!(reverse("weekend"), "dnekeew");
     }
 
     #[test]
-    fn test_sentence() {
+    fn sentence() {
         assert_eq!(reverse("write the program"), "margorp eht etirw");
     }
 }

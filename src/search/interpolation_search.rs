@@ -41,38 +41,35 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_common() {
-        let data = [1, 3, 7, 8, 9, 12, 22, 87];
-        let search = 9;
-
-        let result = match interpolation_search(&data, &search) {
-            Ok(index) => index,
-            Err(_) => 0
-        };
-        assert_eq!(result, 4);
+    fn common() {
+        assert_eq!(
+            4,
+            match interpolation_search(&[1, 3, 7, 8, 9, 12, 22, 87], &9) {
+                Ok(index) => index,
+                Err(_) => 0,
+            }
+        );
     }
 
     #[test]
     fn not_found() {
-        let data = [1, 3, 7, 8, 9, 12, 22, 87];
-        let search = 2;
-
-        let result = match interpolation_search(&data, &search) {
-            Ok(index) => index,
-            Err(_) => 0
-        };
-        assert_ne!(result, 1);
+        assert_ne!(
+            1,
+            match interpolation_search(&[1, 3, 7, 8, 9, 12, 22, 87], &2) {
+                Ok(index) => index,
+                Err(_) => 0,
+            }
+        );
     }
 
     #[test]
     fn empty() {
-        let data = [];
-        let search = 10;
-
-        let result = match interpolation_search(&data, &search) {
-            Ok(index) => index,
-            Err(error) => error
-        };
-        assert_eq!(result, 0);
+        assert_eq!(
+            0,
+            match interpolation_search(&[], &10) {
+                Ok(index) => index,
+                Err(_) => 0,
+            }
+        );
     }
 }
