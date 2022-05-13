@@ -1,7 +1,8 @@
 use crate::search::binary_search;
 
 pub fn exponential_search<T>(data: &[T], target: &T) -> Result<usize, usize>
-    where T: PartialOrd
+where
+    T: PartialOrd,
 {
     if data.is_empty() {
         return Err(0);

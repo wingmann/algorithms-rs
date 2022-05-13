@@ -1,5 +1,6 @@
 pub fn linear_search<T>(data: &[T], target: &T) -> Option<usize>
-    where T: PartialEq
+where
+    T: PartialEq,
 {
     data.iter().position(|x| x == target)
 }
